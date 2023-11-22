@@ -1,5 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import GameBoard from './components/GameBoard.vue'
+</script>
 
-<template>Sudoku</template>
+<template>
+  <main>
+    <GameBoard />
+  </main>
+</template>
 
 <style scoped></style>
