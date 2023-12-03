@@ -31,11 +31,5 @@ aside {
     min-width: 300px;
     padding: 0 2rem;
   }
-
-  main {
-    display: flex;
-    place-items: flex-start;
-    width: 100%;
-  }
 }
 </style>
