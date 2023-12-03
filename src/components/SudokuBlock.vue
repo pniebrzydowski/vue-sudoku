@@ -11,5 +11,9 @@ import NumberBlock from './NumberBlock.vue'
 <style scoped>
 .sudoku-block {
   border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 100%;
 }
 </style>
