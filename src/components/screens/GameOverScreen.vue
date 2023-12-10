@@ -6,7 +6,7 @@ import ButtonLink from '../ButtonLink.vue'
   <div class="full-screen-container">
     <div>
       <div class="buttons">
-        <ButtonLink url="/" label="Start Over"></ButtonLink>
+        <ButtonLink url="/" label="Play Again"></ButtonLink>
       </div>
     </div>
   </div>

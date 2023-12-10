@@ -17,6 +17,7 @@ defineProps<{
   display: inline-block;
   background-color: darkslategrey;
   text-decoration: none;
+  font-size: 1em;
   padding: 0.5em 1em;
 }
 </style>

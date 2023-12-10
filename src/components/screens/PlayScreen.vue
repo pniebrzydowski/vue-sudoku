@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import GameBoard from '../GameBoard.vue'
-import ButtonLink from '../ButtonLink.vue'
+import GameBoard from '@/components/GameBoard.vue'
+import ButtonLink from '@/components/ButtonLink.vue'
 import { router } from '@/router'
+import { useUserStore } from '@/store/useUserStore'
+import { useGameStore } from '@/store/useGameStore'
+const user = useUserStore()
+const game = useGameStore()
 
 function submitPuzzle() {
   // @todo - implement submission and only navigate on correct submission
@@ -16,8 +20,18 @@ function submitPuzzle() {
   <aside>
     <header>
       <h1>Sudoku</h1>
+      <ButtonLink url="/" label="Start Over" />
     </header>
-    <section></section>
+    <section>
+      <p>
+        <strong>Player:</strong>
+        {{ user.name }}
+      </p>
+      <p>
+        <strong>Difficulty:</strong>
+        {{ game.difficultyLabel }}
+      </p>
+    </section>
     <footer>
       <ButtonLink label="Submit Puzzle" @click="submitPuzzle" />
     </footer>
@@ -49,6 +63,7 @@ aside header {
 }
 
 aside section {
+  padding: 1rem 0;
   flex-grow: 1;
 }
 
