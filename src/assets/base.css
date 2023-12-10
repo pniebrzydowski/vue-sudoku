@@ -10,6 +10,11 @@ button {
   appearance: none;
   border: none;
   background: none;
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
 }
 
 body {
