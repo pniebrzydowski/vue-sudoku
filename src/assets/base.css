@@ -6,6 +6,12 @@
   font-weight: normal;
 }
 
+button {
+  appearance: none;
+  border: none;
+  background: none;
+}
+
 body {
   min-height: 100vh;
   line-height: 1.6;
