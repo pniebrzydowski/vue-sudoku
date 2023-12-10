@@ -1,16 +1,18 @@
 <script setup lang="ts">
 defineProps<{
-  url: string
+  url?: string
   label: string
 }>()
 </script>
 
 <template>
-  <router-link class="button" :to="url">{{ label }}</router-link>
+  <router-link v-if="url" class="button" :to="url">{{ label }}</router-link>
+  <button v-else class="button">{{ label }}</button>
 </template>
 
 <style scoped>
 .button {
+  cursor: pointer;
   color: white;
   display: inline-block;
   background-color: darkslategrey;

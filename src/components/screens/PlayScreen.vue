@@ -1,6 +1,12 @@
 <script setup lang="ts">
-import GameBoard from './GameBoard.vue'
-import ButtonLink from './ButtonLink.vue'
+import GameBoard from '../GameBoard.vue'
+import ButtonLink from '../ButtonLink.vue'
+import { router } from '@/router'
+
+function submitPuzzle() {
+  // @todo - implement submission and only navigate on correct submission
+  router.push('/game-over')
+}
 </script>
 
 <template>
@@ -10,8 +16,11 @@ import ButtonLink from './ButtonLink.vue'
   <aside>
     <header>
       <h1>Sudoku</h1>
-      <ButtonLink url="/" label="Back to Start Screen"></ButtonLink>
     </header>
+    <section></section>
+    <footer>
+      <ButtonLink label="Submit Puzzle" @click="submitPuzzle" />
+    </footer>
   </aside>
 </template>
 
@@ -27,13 +36,24 @@ main {
 
 aside {
   width: 100%;
+  height: 100%;
   padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
 }
 
 aside header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+aside section {
+  flex-grow: 1;
+}
+
+aside footer .button {
+  display: block;
 }
 
 @media (min-width: 969px) {

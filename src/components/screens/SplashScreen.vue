@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ButtonLink from './ButtonLink.vue'
+import ButtonLink from '../ButtonLink.vue'
 </script>
 
 <template>
