@@ -13,7 +13,12 @@ const blockNumber = game.board
   : ''
 
 const preventSpecialChars = ($event: KeyboardEvent) => {
-  if (['Backspace', 'Delete', 'ArrowUp', 'ArrowDown'].includes($event.key)) return
+  /**
+   * <input type="number"> allows . and - for negative and decimal numbers
+   * this prevents anything other than valid sudoku numbers (1-9) from being entered
+   * Backspace is preserved to allow removal; arrows to allow cycling through numbers
+   */
+  if (['Backspace', 'ArrowUp', 'ArrowDown'].includes($event.key)) return
   if ($event.key === '.' || $event.key === '-' || !isValidSudokuNumber(+$event.key)) {
     $event.preventDefault()
   }
