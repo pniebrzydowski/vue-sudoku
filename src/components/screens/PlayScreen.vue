@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import GameBoard from '@/components/GameBoard.vue'
 import ButtonLink from '@/components/ButtonLink.vue'
-import { router } from '@/router'
 import { useUserStore } from '@/store/useUserStore'
 import { useGameStore } from '@/store/useGameStore'
+import { router } from '@/router'
 const user = useUserStore()
 const game = useGameStore()
 
@@ -15,7 +15,9 @@ function submitPuzzle() {
 
 <template>
   <main>
-    <GameBoard />
+    <Suspense>
+      <GameBoard />
+    </Suspense>
   </main>
   <aside>
     <header>

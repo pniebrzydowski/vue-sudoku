@@ -2,20 +2,24 @@ import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
 type DifficultyLevel = {
-  level: number
+  level: string
   label: string
 }
 
 export const useGameStore = defineStore('game', () => {
   const difficultyOptions: DifficultyLevel[] = [
-    { level: 1, label: 'Easy' },
-    { level: 2, label: 'Medium' },
-    { level: 3, label: 'Hard' },
+    { level: 'easy', label: 'Easy' },
+    { level: 'medium', label: 'Medium' },
+    { level: 'hard', label: 'Hard' },
   ]
   const difficulty = ref(difficultyOptions[0])
+  const board = ref<number[][] | null>(null)
 
   const difficultyLabel = computed(() => {
     return difficulty.value.label
+  })
+  const difficultyValue = computed(() => {
+    return difficulty.value.level
   })
 
   function isDifficulty(level: DifficultyLevel) {
@@ -25,5 +29,5 @@ export const useGameStore = defineStore('game', () => {
   function setDifficulty(level: DifficultyLevel) {
     difficulty.value = level
   }
-  return { difficultyOptions, difficultyLabel, isDifficulty, setDifficulty }
+  return { board, difficultyValue, difficultyOptions, difficultyLabel, isDifficulty, setDifficulty }
 })
