@@ -10,7 +10,7 @@ const game = useGameStore()
   <div class="full-screen-container">
     <div class="content">
       <header>
-        <h1>Sudoku</h1>
+        <h1>Sudoku+</h1>
       </header>
       <section class="user-input">
         Enter your name:
